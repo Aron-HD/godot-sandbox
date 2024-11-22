@@ -11,5 +11,18 @@ config_version=5
 [application]
 
 config/name="Survival Sandbox"
-config/features=PackedStringArray("4.3", "Forward Plus")
+run/main_scene="res://Boot.tscn"
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="Survival Sandbox"
+
+[file_customization]
+
+folder_colors={
+"res://Art/": "red",
+"res://Core/": "orange",
+"res://Scenes/": "yellow"
+}

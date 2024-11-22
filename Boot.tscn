@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://jrm2ptq8rtly"]
+
+[ext_resource type="Script" path="res://Boot.cs" id="1_trqq5"]
+
+[node name="Boot" type="Node2D"]
+script = ExtResource("1_trqq5")
