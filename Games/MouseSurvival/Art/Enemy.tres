@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://rkhdbcy50veo"]
+
+[ext_resource type="Texture2D" uid="uid://46y535or3hhp" path="res://Games/MouseSurvival/Art/Goblin.webp" id="1_4uyqf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw68l"]
+atlas = ExtResource("1_4uyqf")
+region = Rect2(0, 126, 326, 403)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnvne"]
+atlas = ExtResource("1_4uyqf")
+region = Rect2(326, 126, 326, 403)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wedfi"]
+atlas = ExtResource("1_4uyqf")
+region = Rect2(652, 126, 326, 403)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1joll"]
+atlas = ExtResource("1_4uyqf")
+region = Rect2(0, 598, 326, 403)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wme3e"]
+atlas = ExtResource("1_4uyqf")
+region = Rect2(326, 598, 326, 403)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_got51"]
+atlas = ExtResource("1_4uyqf")
+region = Rect2(652, 598, 326, 403)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw68l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnvne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wedfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1joll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wme3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_got51")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

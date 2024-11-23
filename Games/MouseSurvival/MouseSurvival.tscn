@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dixb1netx4hhm"]
+
+[ext_resource type="Script" path="res://Games/MouseSurvival/Core/EnemyManager.cs" id="1_w2nhi"]
+[ext_resource type="PackedScene" uid="uid://c7d575fkmekpo" path="res://Games/MouseSurvival/Actors/Enemy/Enemy.tscn" id="1_yr0ow"]
+
+[node name="MouseSurvival" type="Node2D"]
+
+[node name="EnemyManager" type="Node" parent="."]
+script = ExtResource("1_w2nhi")
+SpawnInterval = 0.2
+Enemy = ExtResource("1_yr0ow")
+MovementGridCellSize = 64
