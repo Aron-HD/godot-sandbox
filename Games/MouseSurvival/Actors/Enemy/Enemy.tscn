@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7d575fkmekpo"]
+
+[ext_resource type="SpriteFrames" uid="uid://rkhdbcy50veo" path="res://Games/MouseSurvival/Art/Enemy.tres" id="1_lrtgu"]
+[ext_resource type="Script" path="res://Games/MouseSurvival/Actors/Enemy/Enemy.cs" id="1_ymjfd"]
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_ymjfd")
+MoveSpeed = 100.0
+CollisionRadius = 16.0
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = ExtResource("1_lrtgu")
+frame_progress = 0.763263
