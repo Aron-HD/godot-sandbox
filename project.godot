@@ -15,14 +15,24 @@ run/main_scene="res://Boot.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [dotnet]
 
 project/assembly_name="Survival Sandbox"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/screensizer/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
 "res://Art/": "red",
 "res://Core/": "orange",
-"res://Scenes/": "yellow"
+"res://Levels/": "yellow",
+"res://UI/": "green"
 }
