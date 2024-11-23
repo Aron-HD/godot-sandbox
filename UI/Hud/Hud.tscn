@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyv63ruwivj3g"]
+
+[ext_resource type="Script" path="res://UI/Hud/Hud.cs" id="1_jcsw8"]
+[ext_resource type="Script" path="res://addons/screensizer/ScreenSizeControl.cs" id="1_nb050"]
+[ext_resource type="Script" path="res://UI/Hud/SceneLauncherList.cs" id="2_jvaox"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jcsw8")
+
+[node name="ScreenSizer" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 1
+script = ExtResource("1_nb050")
+
+[node name="SceneLoader" type="PanelContainer" parent="ScreenSizer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.1
+anchor_right = 0.75
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ScreenSizer/SceneLoader"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SceneLauncherList" type="VBoxContainer" parent="ScreenSizer/SceneLoader/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_jvaox")
+ScenePaths = PackedStringArray("res://Levels/Chungus.tscn")
+
+[node name="Button" type="Button" parent="ScreenSizer/SceneLoader/ScrollContainer/SceneLauncherList"]
+layout_mode = 2
+text = "Example"
+
+[node name="SceneRunner" type="Control" parent="ScreenSizer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Btn_BackToMenu" type="Button" parent="ScreenSizer/SceneRunner"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -114.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Back to Menu
+"

@@ -11,7 +11,7 @@ public partial class ScreenSizeControlNode : EditorPlugin
         // Add the new type with a name, a parent type, a script and an icon.
         Script script = GD.Load<Script>("addons/screensizer/ScreenSizeControl.cs");
         Texture2D texture = GD.Load<Texture2D>("addons/screensizer/ScreenSizer.png");
-        AddCustomType("ScreenSizer", "Container", script, texture);
+        AddCustomType("ScreenSizer", "Control", script, texture);
     }
 
 	public override void _ExitTree()
