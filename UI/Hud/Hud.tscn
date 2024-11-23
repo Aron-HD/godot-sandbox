@@ -18,10 +18,38 @@ custom_minimum_size = Vector2(1920, 1080)
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-mouse_filter = 1
+mouse_filter = 2
 script = ExtResource("1_nb050")
 
-[node name="SceneLoader" type="PanelContainer" parent="ScreenSizer"]
+[node name="SceneRunner" type="Control" parent="ScreenSizer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Btn_BackToMenu" type="Button" parent="ScreenSizer/SceneRunner"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -114.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Back to Menu
+"
+
+[node name="SceneLoader" type="Control" parent="ScreenSizer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="PanelContainer" parent="ScreenSizer/SceneLoader"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.25
@@ -34,37 +62,21 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ScreenSizer/SceneLoader"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ScreenSizer/SceneLoader/Menu"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SceneLauncherList" type="VBoxContainer" parent="ScreenSizer/SceneLoader/ScrollContainer"]
+[node name="SceneLauncherList" type="VBoxContainer" parent="ScreenSizer/SceneLoader/Menu/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_jvaox")
-ScenePaths = PackedStringArray("res://Levels/Chungus.tscn", "res://Levels/Main.tscn")
+ScenePaths = PackedStringArray("res://Levels/Chungus.tscn", "res://Levels/Main.tscn", "res://Levels/Test.tscn")
 
-[node name="Button" type="Button" parent="ScreenSizer/SceneLoader/ScrollContainer/SceneLauncherList"]
-layout_mode = 2
-text = "Example"
-
-[node name="SceneRunner" type="Control" parent="ScreenSizer"]
-visible = false
+[node name="Btn_Quit" type="Button" parent="ScreenSizer/SceneLoader"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 120.0
+offset_bottom = 58.0
+text = "Quit"
 
-[node name="Btn_BackToMenu" type="Button" parent="ScreenSizer/SceneRunner"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -114.0
-offset_bottom = 31.0
-grow_horizontal = 0
-text = "Back to Menu
-"
+[connection signal="pressed" from="ScreenSizer/SceneLoader/Btn_Quit" to="." method="OnQuitPressed"]

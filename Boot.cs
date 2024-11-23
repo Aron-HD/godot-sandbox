@@ -1,5 +1,12 @@
 using Godot;
-using System;
+
+namespace SurvivalSandbox;
+
+public enum BootState
+{
+    SelectingScene,
+    RunningScene
+}
 
 public partial class Boot : Node2D
 {
@@ -23,11 +30,12 @@ public partial class Boot : Node2D
 
     public void ChangeScene(PackedScene scene)
     {
+        var rootWindow = GetTree().Root;
         if (State == BootState.SelectingScene)
         {
-           _instancedScene = scene.Instantiate();
-            GetTree().Root.AddChild(_instancedScene);
-            GetTree().Root.MoveChild(_instancedScene, 0);
+            _instancedScene = scene.Instantiate();
+            rootWindow.AddChild(_instancedScene);
+            rootWindow.MoveChild(_instancedScene, 0);
             ChangeState(BootState.RunningScene);
         }
     }
@@ -40,21 +48,10 @@ public partial class Boot : Node2D
         switch (State)
         {
             case BootState.SelectingScene:
-                if (_instancedScene != null)
-                {
-                    _instancedScene.QueueFree();
-                }
+                _instancedScene?.QueueFree();
                 break;
-
             case BootState.RunningScene:
                 break;
         }
-    }
-
-    // Make a boot state enum
-    public enum BootState
-    {
-        SelectingScene,
-        RunningScene
     }
 }
