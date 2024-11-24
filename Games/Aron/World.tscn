@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://dc226h6yj2siu"]
+[gd_scene load_steps=4 format=3 uid="uid://dc226h6yj2siu"]
+
+[ext_resource type="PackedScene" uid="uid://cjm5ybjkvoks5" path="res://Games/Aron/Player/Player.tscn" id="1_gfkvh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdwv7"]
+size = Vector2(989, 98.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bj7vs"]
+size = Vector2(144.5, 513.25)
 
 [node name="World" type="Node2D"]
+metadata/_edit_group_ = true
+
+[node name="Player" parent="." instance=ExtResource("1_gfkvh")]
+position = Vector2(52, 44)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(526, 295.5)
+shape = SubResource("RectangleShape2D_sdwv7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1096, 88)
+shape = SubResource("RectangleShape2D_bj7vs")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-43, 90)
+shape = SubResource("RectangleShape2D_bj7vs")
+
+[node name="Floor" type="Panel" parent="."]
+offset_left = 35.0
+offset_top = 245.0
+offset_right = 1019.0
+offset_bottom = 277.0

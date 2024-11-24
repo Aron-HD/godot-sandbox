@@ -71,7 +71,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_jvaox")
-ScenePaths = PackedStringArray("res://Games/Aron/Main.tscn")
+ScenePaths = PackedStringArray("res://Games/Aron/World.tscn")
 
 [node name="Btn_Quit" type="Button" parent="ScreenSizer/SceneLoader"]
 layout_mode = 1

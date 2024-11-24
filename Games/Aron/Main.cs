@@ -1,21 +1,8 @@
 using Godot;
+using SurvivalSandbox.Common;
 using System;
 
 namespace SurvivalSandbox.Games.Aron;
-
-
-public static class NodeExtensions
-{
-    public static Boot GetBootNode(this Node node)
-    {
-        var x = node.GetTree().Root;
-        if (x.HasNode("Boot"))
-        {
-            return x.GetNode<Boot>("Boot");
-        }
-        else throw new NullReferenceException("Boot node not found");
-    }
-}
 
 public partial class Main : Node2D
 {
@@ -45,6 +32,6 @@ public partial class Main : Node2D
     public void OnPlayGamePressed()
     {
         GD.Print("Play Pressed");
-        //GetTree().ChangeSceneToFile("res://Game.tscn");
+        GetTree().ChangeSceneToFile("res://Games/Aron/World.tscn");
     }
 }
