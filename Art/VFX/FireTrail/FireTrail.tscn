@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs4arxwan1o3u"]
+
+[ext_resource type="Script" path="res://Art/VFX/FireTrail/FireTrail.cs" id="1_2hvlm"]
+
+[sub_resource type="Curve" id="Curve_dd26q"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.04267, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_kv0yc"]
+colors = PackedColorArray(1, 0, 0, 0.435294, 1, 0.988235, 0, 1)
+
+[node name="FireTrail" type="Line2D"]
+points = PackedVector2Array(96, 314)
+width = 20.0
+width_curve = SubResource("Curve_dd26q")
+gradient = SubResource("Gradient_kv0yc")
+begin_cap_mode = 2
+script = ExtResource("1_2hvlm")
+MaxLength = 20
